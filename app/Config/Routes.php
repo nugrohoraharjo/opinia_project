@@ -40,6 +40,10 @@ $routes->group("api", function ($routes) {
     $routes->post("register", "UserController::register");
     $routes->post("login", "UserController::login");
     $routes->get("users", "UserController::index", ['filter' => 'authFilter']);
+    $routes->get("posts", "PostController::index", ['filter' => 'authFilter']);
+    $routes->get("posts/(:num)", "PostController::show/$1", ['filter' => 'authFilter']);
+    $routes->get("post-types", "PostTypeController::index", ['filter' => 'authFilter']);
+
 });
 /*
  * --------------------------------------------------------------------
